@@ -1,0 +1,20 @@
+tcpmux 1/tcp
+echo 7/tcp
+echo 7/udp
+discard 9/tcp sink null
+discard 9/udp sink null
+systat 11/tcp users
+daytime 13/tcp
+daytime 13/udp
+netstat 15/tcp
+chargen 19/tcp ttytst source
+chargen 19/udp ttytst source
+ftp-data 20/tcp
+ftp 21/tcp
+ssh 22/tcp # Secure Shell
+telnet 23/tcp
+smtp 25/tcp mail
+time 37/tcp timserver
+time 37/udp timserver
+name 42/udp nameserver
+whois 43/tcp nicname # usually to sri-nic

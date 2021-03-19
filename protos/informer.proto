@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+
+service Informer {
+  rpc GetPort (GetPortReq) returns (GetPortRep) {}
+  rpc GetDescription (GetDescriptionReq) returns (GetDescriptionRep) {}
+}
+
+message GetPortReq {
+  string service = 1;
+}
+
+message GetPortRep {
+  int32 port = 1;
+}
+
+message GetDescriptionReq {
+  string service = 1;
+}
+
+message GetDescriptionRep {
+  string description = 1;
+}
