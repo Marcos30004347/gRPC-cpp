@@ -608,22 +608,73 @@ class GetDescriptionRep PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDescriptionFieldNumber = 1,
+    kNameFieldNumber = 1,
+    kPortAndProtocolFieldNumber = 2,
+    kAliasesFieldNumber = 3,
+    kCommentsFieldNumber = 4,
   };
-  // string description = 1;
-  void clear_description();
-  const std::string& description() const;
-  void set_description(const std::string& value);
-  void set_description(std::string&& value);
-  void set_description(const char* value);
-  void set_description(const char* value, size_t size);
-  std::string* mutable_description();
-  std::string* release_description();
-  void set_allocated_description(std::string* description);
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_description() const;
-  void _internal_set_description(const std::string& value);
-  std::string* _internal_mutable_description();
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string port_and_protocol = 2;
+  void clear_port_and_protocol();
+  const std::string& port_and_protocol() const;
+  void set_port_and_protocol(const std::string& value);
+  void set_port_and_protocol(std::string&& value);
+  void set_port_and_protocol(const char* value);
+  void set_port_and_protocol(const char* value, size_t size);
+  std::string* mutable_port_and_protocol();
+  std::string* release_port_and_protocol();
+  void set_allocated_port_and_protocol(std::string* port_and_protocol);
+  private:
+  const std::string& _internal_port_and_protocol() const;
+  void _internal_set_port_and_protocol(const std::string& value);
+  std::string* _internal_mutable_port_and_protocol();
+  public:
+
+  // string aliases = 3;
+  void clear_aliases();
+  const std::string& aliases() const;
+  void set_aliases(const std::string& value);
+  void set_aliases(std::string&& value);
+  void set_aliases(const char* value);
+  void set_aliases(const char* value, size_t size);
+  std::string* mutable_aliases();
+  std::string* release_aliases();
+  void set_allocated_aliases(std::string* aliases);
+  private:
+  const std::string& _internal_aliases() const;
+  void _internal_set_aliases(const std::string& value);
+  std::string* _internal_mutable_aliases();
+  public:
+
+  // string comments = 4;
+  void clear_comments();
+  const std::string& comments() const;
+  void set_comments(const std::string& value);
+  void set_comments(std::string&& value);
+  void set_comments(const char* value);
+  void set_comments(const char* value, size_t size);
+  std::string* mutable_comments();
+  std::string* release_comments();
+  void set_allocated_comments(std::string* comments);
+  private:
+  const std::string& _internal_comments() const;
+  void _internal_set_comments(const std::string& value);
+  std::string* _internal_mutable_comments();
   public:
 
   // @@protoc_insertion_point(class_scope:GetDescriptionRep)
@@ -633,7 +684,10 @@ class GetDescriptionRep PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr port_and_protocol_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr aliases_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr comments_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_informer_2eproto;
 };
@@ -802,65 +856,248 @@ inline void GetDescriptionReq::set_allocated_service(std::string* service) {
 
 // GetDescriptionRep
 
-// string description = 1;
-inline void GetDescriptionRep::clear_description() {
-  description_.ClearToEmpty();
+// string name = 1;
+inline void GetDescriptionRep::clear_name() {
+  name_.ClearToEmpty();
 }
-inline const std::string& GetDescriptionRep::description() const {
-  // @@protoc_insertion_point(field_get:GetDescriptionRep.description)
-  return _internal_description();
+inline const std::string& GetDescriptionRep::name() const {
+  // @@protoc_insertion_point(field_get:GetDescriptionRep.name)
+  return _internal_name();
 }
-inline void GetDescriptionRep::set_description(const std::string& value) {
-  _internal_set_description(value);
-  // @@protoc_insertion_point(field_set:GetDescriptionRep.description)
+inline void GetDescriptionRep::set_name(const std::string& value) {
+  _internal_set_name(value);
+  // @@protoc_insertion_point(field_set:GetDescriptionRep.name)
 }
-inline std::string* GetDescriptionRep::mutable_description() {
-  // @@protoc_insertion_point(field_mutable:GetDescriptionRep.description)
-  return _internal_mutable_description();
+inline std::string* GetDescriptionRep::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:GetDescriptionRep.name)
+  return _internal_mutable_name();
 }
-inline const std::string& GetDescriptionRep::_internal_description() const {
-  return description_.Get();
+inline const std::string& GetDescriptionRep::_internal_name() const {
+  return name_.Get();
 }
-inline void GetDescriptionRep::_internal_set_description(const std::string& value) {
+inline void GetDescriptionRep::_internal_set_name(const std::string& value) {
   
-  description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void GetDescriptionRep::set_description(std::string&& value) {
+inline void GetDescriptionRep::set_name(std::string&& value) {
   
-  description_.Set(
+  name_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:GetDescriptionRep.description)
+  // @@protoc_insertion_point(field_set_rvalue:GetDescriptionRep.name)
 }
-inline void GetDescriptionRep::set_description(const char* value) {
+inline void GetDescriptionRep::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:GetDescriptionRep.description)
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:GetDescriptionRep.name)
 }
-inline void GetDescriptionRep::set_description(const char* value,
+inline void GetDescriptionRep::set_name(const char* value,
     size_t size) {
   
-  description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:GetDescriptionRep.description)
+  // @@protoc_insertion_point(field_set_pointer:GetDescriptionRep.name)
 }
-inline std::string* GetDescriptionRep::_internal_mutable_description() {
+inline std::string* GetDescriptionRep::_internal_mutable_name() {
   
-  return description_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* GetDescriptionRep::release_description() {
-  // @@protoc_insertion_point(field_release:GetDescriptionRep.description)
-  return description_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* GetDescriptionRep::release_name() {
+  // @@protoc_insertion_point(field_release:GetDescriptionRep.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void GetDescriptionRep::set_allocated_description(std::string* description) {
-  if (description != nullptr) {
+inline void GetDescriptionRep::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description,
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:GetDescriptionRep.description)
+  // @@protoc_insertion_point(field_set_allocated:GetDescriptionRep.name)
+}
+
+// string port_and_protocol = 2;
+inline void GetDescriptionRep::clear_port_and_protocol() {
+  port_and_protocol_.ClearToEmpty();
+}
+inline const std::string& GetDescriptionRep::port_and_protocol() const {
+  // @@protoc_insertion_point(field_get:GetDescriptionRep.port_and_protocol)
+  return _internal_port_and_protocol();
+}
+inline void GetDescriptionRep::set_port_and_protocol(const std::string& value) {
+  _internal_set_port_and_protocol(value);
+  // @@protoc_insertion_point(field_set:GetDescriptionRep.port_and_protocol)
+}
+inline std::string* GetDescriptionRep::mutable_port_and_protocol() {
+  // @@protoc_insertion_point(field_mutable:GetDescriptionRep.port_and_protocol)
+  return _internal_mutable_port_and_protocol();
+}
+inline const std::string& GetDescriptionRep::_internal_port_and_protocol() const {
+  return port_and_protocol_.Get();
+}
+inline void GetDescriptionRep::_internal_set_port_and_protocol(const std::string& value) {
+  
+  port_and_protocol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void GetDescriptionRep::set_port_and_protocol(std::string&& value) {
+  
+  port_and_protocol_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:GetDescriptionRep.port_and_protocol)
+}
+inline void GetDescriptionRep::set_port_and_protocol(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  port_and_protocol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:GetDescriptionRep.port_and_protocol)
+}
+inline void GetDescriptionRep::set_port_and_protocol(const char* value,
+    size_t size) {
+  
+  port_and_protocol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:GetDescriptionRep.port_and_protocol)
+}
+inline std::string* GetDescriptionRep::_internal_mutable_port_and_protocol() {
+  
+  return port_and_protocol_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* GetDescriptionRep::release_port_and_protocol() {
+  // @@protoc_insertion_point(field_release:GetDescriptionRep.port_and_protocol)
+  return port_and_protocol_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetDescriptionRep::set_allocated_port_and_protocol(std::string* port_and_protocol) {
+  if (port_and_protocol != nullptr) {
+    
+  } else {
+    
+  }
+  port_and_protocol_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), port_and_protocol,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:GetDescriptionRep.port_and_protocol)
+}
+
+// string aliases = 3;
+inline void GetDescriptionRep::clear_aliases() {
+  aliases_.ClearToEmpty();
+}
+inline const std::string& GetDescriptionRep::aliases() const {
+  // @@protoc_insertion_point(field_get:GetDescriptionRep.aliases)
+  return _internal_aliases();
+}
+inline void GetDescriptionRep::set_aliases(const std::string& value) {
+  _internal_set_aliases(value);
+  // @@protoc_insertion_point(field_set:GetDescriptionRep.aliases)
+}
+inline std::string* GetDescriptionRep::mutable_aliases() {
+  // @@protoc_insertion_point(field_mutable:GetDescriptionRep.aliases)
+  return _internal_mutable_aliases();
+}
+inline const std::string& GetDescriptionRep::_internal_aliases() const {
+  return aliases_.Get();
+}
+inline void GetDescriptionRep::_internal_set_aliases(const std::string& value) {
+  
+  aliases_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void GetDescriptionRep::set_aliases(std::string&& value) {
+  
+  aliases_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:GetDescriptionRep.aliases)
+}
+inline void GetDescriptionRep::set_aliases(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  aliases_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:GetDescriptionRep.aliases)
+}
+inline void GetDescriptionRep::set_aliases(const char* value,
+    size_t size) {
+  
+  aliases_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:GetDescriptionRep.aliases)
+}
+inline std::string* GetDescriptionRep::_internal_mutable_aliases() {
+  
+  return aliases_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* GetDescriptionRep::release_aliases() {
+  // @@protoc_insertion_point(field_release:GetDescriptionRep.aliases)
+  return aliases_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetDescriptionRep::set_allocated_aliases(std::string* aliases) {
+  if (aliases != nullptr) {
+    
+  } else {
+    
+  }
+  aliases_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), aliases,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:GetDescriptionRep.aliases)
+}
+
+// string comments = 4;
+inline void GetDescriptionRep::clear_comments() {
+  comments_.ClearToEmpty();
+}
+inline const std::string& GetDescriptionRep::comments() const {
+  // @@protoc_insertion_point(field_get:GetDescriptionRep.comments)
+  return _internal_comments();
+}
+inline void GetDescriptionRep::set_comments(const std::string& value) {
+  _internal_set_comments(value);
+  // @@protoc_insertion_point(field_set:GetDescriptionRep.comments)
+}
+inline std::string* GetDescriptionRep::mutable_comments() {
+  // @@protoc_insertion_point(field_mutable:GetDescriptionRep.comments)
+  return _internal_mutable_comments();
+}
+inline const std::string& GetDescriptionRep::_internal_comments() const {
+  return comments_.Get();
+}
+inline void GetDescriptionRep::_internal_set_comments(const std::string& value) {
+  
+  comments_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void GetDescriptionRep::set_comments(std::string&& value) {
+  
+  comments_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:GetDescriptionRep.comments)
+}
+inline void GetDescriptionRep::set_comments(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  comments_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:GetDescriptionRep.comments)
+}
+inline void GetDescriptionRep::set_comments(const char* value,
+    size_t size) {
+  
+  comments_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:GetDescriptionRep.comments)
+}
+inline std::string* GetDescriptionRep::_internal_mutable_comments() {
+  
+  return comments_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* GetDescriptionRep::release_comments() {
+  // @@protoc_insertion_point(field_release:GetDescriptionRep.comments)
+  return comments_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetDescriptionRep::set_allocated_comments(std::string* comments) {
+  if (comments != nullptr) {
+    
+  } else {
+    
+  }
+  comments_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), comments,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:GetDescriptionRep.comments)
 }
 
 #ifdef __GNUC__

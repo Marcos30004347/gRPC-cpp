@@ -110,7 +110,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_informer_2eproto::offsets[] PR
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::GetDescriptionRep, description_),
+  PROTOBUF_FIELD_OFFSET(::GetDescriptionRep, name_),
+  PROTOBUF_FIELD_OFFSET(::GetDescriptionRep, port_and_protocol_),
+  PROTOBUF_FIELD_OFFSET(::GetDescriptionRep, aliases_),
+  PROTOBUF_FIELD_OFFSET(::GetDescriptionRep, comments_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::GetPortReq)},
@@ -129,11 +132,13 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_informer_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\016informer.proto\"\035\n\nGetPortReq\022\017\n\007servic"
   "e\030\001 \001(\t\"\032\n\nGetPortRep\022\014\n\004port\030\001 \001(\005\"$\n\021G"
-  "etDescriptionReq\022\017\n\007service\030\001 \001(\t\"(\n\021Get"
-  "DescriptionRep\022\023\n\013description\030\001 \001(\t2m\n\010I"
-  "nformer\022%\n\007GetPort\022\013.GetPortReq\032\013.GetPor"
-  "tRep\"\000\022:\n\016GetDescription\022\022.GetDescriptio"
-  "nReq\032\022.GetDescriptionRep\"\000b\006proto3"
+  "etDescriptionReq\022\017\n\007service\030\001 \001(\t\"_\n\021Get"
+  "DescriptionRep\022\014\n\004name\030\001 \001(\t\022\031\n\021port_and"
+  "_protocol\030\002 \001(\t\022\017\n\007aliases\030\003 \001(\t\022\020\n\010comm"
+  "ents\030\004 \001(\t2m\n\010Informer\022%\n\007GetPort\022\013.GetP"
+  "ortReq\032\013.GetPortRep\"\000\022:\n\016GetDescription\022"
+  "\022.GetDescriptionReq\032\022.GetDescriptionRep\""
+  "\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_informer_2eproto_deps[1] = {
 };
@@ -145,7 +150,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_inf
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_informer_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_informer_2eproto = {
-  false, false, descriptor_table_protodef_informer_2eproto, "informer.proto", 274,
+  false, false, descriptor_table_protodef_informer_2eproto, "informer.proto", 329,
   &descriptor_table_informer_2eproto_once, descriptor_table_informer_2eproto_sccs, descriptor_table_informer_2eproto_deps, 4, 0,
   schemas, file_default_instances, TableStruct_informer_2eproto::offsets,
   file_level_metadata_informer_2eproto, 4, file_level_enum_descriptors_informer_2eproto, file_level_service_descriptors_informer_2eproto,
@@ -775,9 +780,24 @@ GetDescriptionRep::GetDescriptionRep(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 GetDescriptionRep::GetDescriptionRep(const GetDescriptionRep& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_description().empty()) {
-    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArena());
+  }
+  port_and_protocol_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_port_and_protocol().empty()) {
+    port_and_protocol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_port_and_protocol(), 
+      GetArena());
+  }
+  aliases_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_aliases().empty()) {
+    aliases_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_aliases(), 
+      GetArena());
+  }
+  comments_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_comments().empty()) {
+    comments_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_comments(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:GetDescriptionRep)
@@ -785,7 +805,10 @@ GetDescriptionRep::GetDescriptionRep(const GetDescriptionRep& from)
 
 void GetDescriptionRep::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetDescriptionRep_informer_2eproto.base);
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  port_and_protocol_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  aliases_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  comments_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GetDescriptionRep::~GetDescriptionRep() {
@@ -796,7 +819,10 @@ GetDescriptionRep::~GetDescriptionRep() {
 
 void GetDescriptionRep::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  port_and_protocol_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  aliases_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  comments_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetDescriptionRep::ArenaDtor(void* object) {
@@ -820,7 +846,10 @@ void GetDescriptionRep::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  description_.ClearToEmpty();
+  name_.ClearToEmpty();
+  port_and_protocol_.ClearToEmpty();
+  aliases_.ClearToEmpty();
+  comments_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -831,12 +860,39 @@ const char* GetDescriptionRep::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string description = 1;
+      // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_description();
+          auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "GetDescriptionRep.description"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "GetDescriptionRep.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string port_and_protocol = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_port_and_protocol();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "GetDescriptionRep.port_and_protocol"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string aliases = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_aliases();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "GetDescriptionRep.aliases"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string comments = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_comments();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "GetDescriptionRep.comments"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -868,14 +924,44 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string description = 1;
-  if (this->description().size() > 0) {
+  // string name = 1;
+  if (this->name().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "GetDescriptionRep.description");
+      "GetDescriptionRep.name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_description(), target);
+        1, this->_internal_name(), target);
+  }
+
+  // string port_and_protocol = 2;
+  if (this->port_and_protocol().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_port_and_protocol().data(), static_cast<int>(this->_internal_port_and_protocol().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "GetDescriptionRep.port_and_protocol");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_port_and_protocol(), target);
+  }
+
+  // string aliases = 3;
+  if (this->aliases().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_aliases().data(), static_cast<int>(this->_internal_aliases().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "GetDescriptionRep.aliases");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_aliases(), target);
+  }
+
+  // string comments = 4;
+  if (this->comments().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_comments().data(), static_cast<int>(this->_internal_comments().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "GetDescriptionRep.comments");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_comments(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -894,11 +980,32 @@ size_t GetDescriptionRep::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string description = 1;
-  if (this->description().size() > 0) {
+  // string name = 1;
+  if (this->name().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_description());
+        this->_internal_name());
+  }
+
+  // string port_and_protocol = 2;
+  if (this->port_and_protocol().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_port_and_protocol());
+  }
+
+  // string aliases = 3;
+  if (this->aliases().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_aliases());
+  }
+
+  // string comments = 4;
+  if (this->comments().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_comments());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -932,8 +1039,17 @@ void GetDescriptionRep::MergeFrom(const GetDescriptionRep& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.description().size() > 0) {
-    _internal_set_description(from._internal_description());
+  if (from.name().size() > 0) {
+    _internal_set_name(from._internal_name());
+  }
+  if (from.port_and_protocol().size() > 0) {
+    _internal_set_port_and_protocol(from._internal_port_and_protocol());
+  }
+  if (from.aliases().size() > 0) {
+    _internal_set_aliases(from._internal_aliases());
+  }
+  if (from.comments().size() > 0) {
+    _internal_set_comments(from._internal_comments());
   }
 }
 
@@ -958,7 +1074,10 @@ bool GetDescriptionRep::IsInitialized() const {
 void GetDescriptionRep::InternalSwap(GetDescriptionRep* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  port_and_protocol_.Swap(&other->port_and_protocol_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  aliases_.Swap(&other->aliases_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  comments_.Swap(&other->comments_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetDescriptionRep::GetMetadata() const {

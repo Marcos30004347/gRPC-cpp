@@ -20,9 +20,7 @@ class InformerImp final: public Informer::Service {
         std::string line;
         std::ifstream file(filename);
 
-        while (std::getline(file, line))
-        {
-            // Ignore comments
+        while (std::getline(file, line)) {
             if(line[0] == '#') continue;
 
             std::istringstream iss(line);
@@ -33,14 +31,45 @@ class InformerImp final: public Informer::Service {
 
             if(service == req->service()) {
                 std::string description = iss.str();
-                unsigned long pos = description.find("#");
-                if(pos != std::string::npos) {
-                    description = description.substr(pos + 2, description.length() - 1);
+                std::string port = "";
+    
+                char str[description.length()];
+                strcpy(str, description.c_str());
+                char* tmp;
+                
+                tmp = strtok(str, " ");
+                if(tmp == NULL) break;
+                reply->set_name(tmp);
+                
+                tmp = strtok(NULL, " ");
+                if(tmp == NULL) break;
+                reply->set_port_and_protocol(tmp);
+                
+                tmp = strtok(NULL, " ");
+                if(tmp == NULL) break;
+                if(tmp[0] == '#') {
+                    tmp = strtok(NULL, " ");
+                    reply->set_comments(tmp);
+                    reply->set_aliases("");
+                    break;
                 }
-                reply->set_description(description);
+                reply->set_aliases(tmp);
+                
+                tmp = strtok(NULL, " ");
+                if(tmp == NULL) {
+                    reply->set_comments("");
+                    break;
+                }
+
+                if(tmp[0] == '#') {
+                    tmp = strtok(NULL, " ");
+                    reply->set_comments(tmp);
+                    break;
+                }
                 break;
             }
         }
+
         file.close();
         return grpc::Status::OK;
     }
@@ -73,7 +102,7 @@ int main(int argc, char* argv[]) {
     if(argc < 3) {
         printf("server <port> <services_file>\n");
     }
-    std::string adress = std::string("localhost:") + std::string(argv[1]);
+    std::string adress = std::string("0.0.0.0:") + std::string(argv[1]);
     filename = argv[2];
 
     InformerImp service;

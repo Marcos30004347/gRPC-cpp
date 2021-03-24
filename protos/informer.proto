@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-
 service Informer {
   rpc GetPort (GetPortReq) returns (GetPortRep) {}
   rpc GetDescription (GetDescriptionReq) returns (GetDescriptionRep) {}
@@ -19,5 +18,8 @@ message GetDescriptionReq {
 }
 
 message GetDescriptionRep {
-  string description = 1;
+  string name = 1;
+  string port_and_protocol = 2;
+  string aliases = 3;
+  string comments = 4;
 }
